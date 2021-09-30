@@ -19,9 +19,9 @@ async function getProductos() {
         console.log(listaProductos.data);
         let agregarProducto = await axios.post(URL + '/guardar', nuevoProducto);
         console.log(agregarProducto.data);
-        let actualizarProducto = await axios.put(URL + '/actualizar', {title: nuevoProducto.title, nuevoProducto: productoActualizado});
+        let actualizarProducto = await axios.put(URL + '/actualizar', { title: nuevoProducto.title, nuevoProducto: productoActualizado });
         console.log(actualizarProducto.data);
-        let borrarProducto = await axios.delete(URL + '/borrar', { title: productoActualizado.title})
+        let borrarProducto = await axios.delete(URL + '/borrar', { title: productoActualizado.title })
         console.log(borrarProducto.data)
     } catch (error) {
         console.log(error.response.data)
